@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Driver Panel</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurant.html">Restaurants</a>
+        <a href="order-history.html">My Orders</a>
+        <a href="delivery-tracking.html">Track Delivery</a>
+        <a href="delivery-panel.html">Delivery Panel</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+      </nav>
+  <h1>Driver Delivery Panel</h1>
+  <div id="delivery-list"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const driverId = 4; // Replace with logged-in driver ID
+
+      try {
+        const res = await fetch(`http://localhost:5000/api/driver/${driverId}/deliveries`);
+        const deliveries = await res.json();
+
+        const container = document.getElementById('delivery-list');
+        if (deliveries.length === 0) {
+          container.innerHTML = "<p>No deliveries assigned.</p>";
+        } else {
+          deliveries.forEach(delivery => {
+            const div = document.createElement('div');
+            div.innerHTML = `
+              <h3>Order ID: ${delivery.order_id}</h3>
+              <p>Status: ${delivery.delivery_status}</p>
+              <p>ETA: ${new Date(delivery.estimated_time).toLocaleTimeString()}</p>
+              <button onclick="updateStatus(${delivery.delivery_id}, 'on the way')">On the Way</button>
+              <button onclick="updateStatus(${delivery.delivery_id}, 'delivered')">Delivered</button>
+              <hr>
+            `;
+            container.appendChild(div);
+          });
+        }
+      } catch (err) {
+        console.error("Error loading deliveries:", err);
+      }
+    });
+
+    async function updateStatus(deliveryId, status) {
+      try {
+        const res = await fetch(`http://localhost:5000/api/driver/update-status`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ delivery_id: deliveryId, delivery_status: status })
+        });
+        const data = await res.json();
+        alert(data.message);
+        location.reload();
+      } catch (err) {
+        console.error("Update failed:", err);
+      }
+    }
+  </script>
+</body>
+</html>
