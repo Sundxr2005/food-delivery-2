@@ -19,7 +19,7 @@
 
     <h1>Payment for Order</h1>
 
-    <div id="payment-details">
+    <div id="payment-details" class="payment-card-premium fade-in">
         <p>Order ID: <span id="order-id"></span></p>
         <p>Total Amount: ₹<span id="amount"></span></p>
 
@@ -32,7 +32,10 @@
                 <option value="cash on delivery">Cash on Delivery</option>
             </select>
 
-            <button type="submit">Pay Now</button>
+            <button type="submit" class="pay-btn-premium">
+                <span>Pay Now</span>
+                <span class="btn-icon">&#128179;</span>
+            </button>
         </form>
     </div>
 

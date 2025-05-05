@@ -16,23 +16,51 @@
         <a href="login.html">Login</a>
         <a href="register.html">Register</a>
       </nav>
-  <h2>Register</h2>
-  <form id="registerForm">
-    <input type="text" name="name" placeholder="Name" required /><br/>
-    <input type="email" name="email" placeholder="Email" required /><br/>
-    <input type="text" name="phone" placeholder="Phone" required /><br/>
-    <input type="text" name="address" placeholder="Address" required /><br/>
-    <input type="password" name="password" placeholder="Password" required /><br/>
-    <select name="user_type" required>
-      <option value="">Select Role</option>
-      <option value="customer">Customer</option>
-      <option value="owner">Restaurant Owner</option>
-      <option value="driver">Driver</option>
-    </select><br/>
-    <button type="submit">Register</button>
-  </form>
-
-  <p id="message"></p>
+  <div class="register-container">
+    <h2>Register</h2>
+    <form id="registerForm" autocomplete="off">
+      <div class="floating-label">
+        <span class="icon">&#128100;</span>
+        <input type="text" name="name" id="reg-name" placeholder=" " required />
+        <label for="reg-name">Name</label>
+      </div>
+      <div class="floating-label">
+        <span class="icon">&#9993;</span>
+        <input type="email" name="email" id="reg-email" placeholder=" " required />
+        <label for="reg-email">Email</label>
+      </div>
+      <div class="floating-label">
+        <span class="icon">&#128222;</span>
+        <input type="text" name="phone" id="reg-phone" placeholder=" " required />
+        <label for="reg-phone">Phone</label>
+      </div>
+      <div class="floating-label">
+        <span class="icon">&#127968;</span>
+        <input type="text" name="address" id="reg-address" placeholder=" " required />
+        <label for="reg-address">Address</label>
+      </div>
+      <div class="floating-label">
+        <span class="icon">&#128274;</span>
+        <input type="password" name="password" id="reg-password" placeholder=" " required />
+        <label for="reg-password">Password</label>
+      </div>
+      <div class="floating-label">
+        <span class="icon">&#128100;</span>
+        <select name="user_type" id="reg-user-type" required>
+          <option value="" disabled selected>Select Role</option>
+          <option value="customer">Customer</option>
+          <option value="owner">Restaurant Owner</option>
+          <option value="driver">Driver</option>
+        </select>
+        <label for="reg-user-type">Role</label>
+      </div>
+      <button type="submit" class="register-btn-premium">
+        <span>Register</span>
+        <span class="btn-icon">&#10003;</span>
+      </button>
+    </form>
+    <p id="message"></p>
+  </div>
   <script src="js/register.js"></script>
 </body>
 </html>

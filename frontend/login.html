@@ -1,29 +1,56 @@
 <!-- public/login.html -->
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Login</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="restaurant.html">Restaurants</a>
-        <a href="order-history.html">My Orders</a>
-        <a href="delivery-tracking.html">Track Delivery</a>
-        <a href="delivery-panel.html">Delivery Panel</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
-      </nav>
-  <h2>Login</h2>
-  <form id="loginForm">
-    <input type="email" name="email" placeholder="Email" required /><br/>
-    <input type="password" name="password" placeholder="Password" required /><br/>
-    <button type="submit">Login</button>
-  </form>
-
-  <p id="message"></p>
+      <a href="index.html">Home</a>
+      <a href="restaurant.html">Restaurants</a>
+      <a href="order-history.html">My Orders</a>
+      <a href="delivery-tracking.html">Track Delivery</a>
+      <a href="delivery-panel.html">Delivery Panel</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </nav>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm" autocomplete="off">
+        <div class="floating-label">
+          <span class="icon">&#9993;</span>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder=" "
+            required
+          />
+          <label for="email">Email</label>
+        </div>
+        <div class="floating-label">
+          <span class="icon">&#128274;</span>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder=" "
+            required
+          />
+          <label for="password">Password</label>
+        </div>
+        <button type="submit" class="login-btn-premium">
+          <span>Login</span>
+          <span class="btn-icon">&#10148;</span>
+        </button>
+      </form>
+      <p id="message"></p>
+    </div>
     <script src="js/login.js"></script>
-</body>
+  </body>
 </html>

@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant Details</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="restaurant.html">Restaurants</a>
-        <a href="order-history.html">My Orders</a>
-        <a href="delivery-tracking.html">Track Delivery</a>
-        <a href="delivery-panel.html">Delivery Panel</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
-      </nav>
+      <a href="index.html">Home</a>
+      <a href="restaurant.html">Restaurants</a>
+      <a href="order-history.html">My Orders</a>
+      <a href="delivery-tracking.html">Track Delivery</a>
+      <a href="delivery-panel.html">Delivery Panel</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </nav>
     <h1 id="restaurant-name">Restaurant Details</h1>
     <div id="restaurant-details"></div>
 
-<h2>Place Your Order:</h2>
-<form id="order-form">
-    <div id="menu-items" class="menu-container">
-        <!-- Menu cards will be added here -->
-    </div>
-    <p class="total">Total Price: ₹<span id="total-price">0.00</span></p>
-    <button type="submit">Place Order</button>
-</form>
-
-
+    <h2>Place Your Order:</h2>
+    <form id="order-form">
+      <div id="menu-items" class="menu-container-premium"></div>
+      <p class="total">Total Price: ₹<span id="total-price">0.00</span></p>
+      <button type="submit" class="order-btn-premium">
+        <span>Place Order</span>
+        <span class="btn-icon">&#127828;</span>
+      </button>
+    </form>
 
     <script src="js/restaurant-details.js"></script>
-</body>
+  </body>
 </html>
